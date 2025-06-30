@@ -780,7 +780,7 @@ html,body{
 /* --- BRANDS / CLIENT SHOWCASE Section Styling (White Glass Effect with Animation) --- */
 .brand_wrapper {
     position: relative;
-    padding: 120px 0;
+    padding: 40px 0;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -921,7 +921,7 @@ html,body{
     font-weight: 800;
     text-align: center;
     text-shadow: 0 0 35px rgba(102, 204, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.7);
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     letter-spacing: 0.04em;
     animation: titleFlicker 8s infinite alternate ease-in-out;
 }
@@ -1022,31 +1022,35 @@ html,body{
 /* Responsive Adjustments (UNCHANGED from previous update) */
 
 @media (min-width: 1200px) {
+    .brand_wrapper { padding: 30px 0; }
     .client_logo_card { min-height: 200px; padding: 20px; }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+    .brand_wrapper { padding: 30px 0; }
     .client_logo_card { min-height: 180px; padding: 18px; }
     .brand_title { font-size: 3em; }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+    .brand_wrapper { padding: 30px 0; }
     .client_logo_card { min-height: 160px; padding: 15px; }
-    .brand_title { font-size: 2.5em; }
+    .brand_title { font-size: 2.5em; margin-bottom: 0px;  }
     .brands-bg-blob { filter: blur(140px); opacity: 0.2; }
     .brands-blob-1 { width: 600px; height: 600px; }
     .brands-blob-2 { width: 650px; height: 650px; }
     .brands-animated-grid { opacity: 0.02; }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+    .brand_wrapper { padding: 30px 0; }
     .client_logo_card { min-height: 130px; padding: 12px; }
-    .brand_title { font-size: 2.2em; }
+    .brand_title { font-size: 2.2em; margin-bottom: 0px; }
     .brands-bg-blob { filter: blur(100px); opacity: 0.18; }
     .brands-blob-1 { width: 450px; height: 450px; }
     .brands-blob-2 { width: 500px; height: 500px; }
     .brands-animated-grid { opacity: 0.015; }
 }
 @media (max-width: 575px) {
-    .brand_wrapper { padding: 80px 0; }
-    .brand_title { font-size: 1.8em; margin-bottom: 25px; }
+    .brand_wrapper { padding: 30px 0; }
+    .brand_title { font-size: 1.8em; margin-bottom: 0px; }
     .brand_subtitle { font-size: 0.85em; }
     .client_logo_card { min-height: 110px; padding: 10px; }
     .brands-bg-blob { filter: blur(80px); opacity: 0.15; }
@@ -2843,4 +2847,585 @@ body {
     }
     .reviews-blob-1 { width: 280px; height: 280px; }
     .reviews-blob-2 { width: 380px; height: 380px; }
+}
+
+/* --- ANIMATED GLASSMOPHIC SECTION STYLING --- */
+.animated-glass-section {
+    position: relative;
+    padding: 40px 0;
+    background: radial-gradient(circle at center, #0B1630 0%, #050B1B 85%, #02050F 100%); /* Deep dark background */
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Background animated blobs for this section */
+.glass-bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(150px); /* Adjust blur for effect */
+    opacity: 0.15;
+    z-index: 0;
+    animation: glassBlobMove 40s infinite alternate ease-in-out;
+    transform-origin: center center;
+    mix-blend-mode: screen; /* Lighten effect */
+}
+
+.glass-blob-1 {
+    background: radial-gradient(circle, rgba(102, 204, 255, 0.8) 0%, rgba(102, 204, 255, 0) 70%); /* Blue glow */
+    width: 500px;
+    height: 500px;
+    top: -10%;
+    left: -5%;
+    animation-delay: 2s;
+}
+
+.glass-blob-2 {
+    background: radial-gradient(circle, rgba(146, 184, 255, 0.8) 0%, rgba(146, 184, 255, 0) 70%); /* Purple-blue glow */
+    width: 600px;
+    height: 600px;
+    bottom: -15%;
+    right: -10%;
+    animation-delay: 15s;
+}
+
+@keyframes glassBlobMove {
+    0% { transform: translate(0, 0) scale(1.0); opacity: 0.15; }
+    25% { transform: translate(100px, -70px) scale(0.98); opacity: 0.18; }
+    50% { transform: translate(-70px, 90px) scale(1.02); opacity: 0.12; }
+    75% { transform: translate(60px, 80px) scale(1.01); opacity: 0.16; }
+    100% { transform: translate(0, 0) scale(1.0); opacity: 0.15; }
+}
+
+/* Subtle Animated Texture Overlay */
+.glass-animated-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.03; /* Very subtle */
+    background-image:
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 40px),
+        repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 40px);
+    background-size: 40px 40px;
+    animation: glassTexturePan 80s linear infinite;
+}
+
+@keyframes glassTexturePan {
+    0% { background-position: 0 0; }
+    100% { background-position: 400px 400px; }
+}
+
+.animated-glass-section .container {
+    position: relative;
+    z-index: 1; /* Ensure content is above background elements */
+}
+
+.animated-glass-section h2 {
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #66CCFF;
+    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7);
+}
+
+.animated-glass-section .section-description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.glass-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 40px; /* Space between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Horizontal padding for container */
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05); /* Translucent background */
+    backdrop-filter: blur(10px); /* Glassmorphic blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 35px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth hover transition */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.03); /* Initial shadow with inner glow */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Lift and slightly enlarge */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(255, 255, 255, 0.08), 0 0 60px rgba(102, 204, 255, 0.4); /* Stronger shadow and outer glow */
+    background: rgba(255, 255, 255, 0.08); /* Slightly more opaque on hover */
+    border-color: rgba(102, 204, 255, 0.3); /* Border changes color */
+}
+
+.glass-card .card-icon {
+    width: 80px; /* Icon container size */
+    height: 80px;
+    margin: 0 auto 25px auto;
+    background: rgba(102, 204, 255, 0.1); /* Subtle background for icon */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(102, 204, 255, 0.4); /* Glow around icon */
+    transition: all 0.4s ease;
+}
+
+.glass-card:hover .card-icon {
+    transform: rotateY(15deg) scale(1.1); /* Slight 3D rotation and grow on hover */
+    box-shadow: 0 0 25px rgba(102, 204, 255, 0.7); /* Brighter glow on hover */
+}
+
+.glass-card .card-icon img {
+    width: 60%; /* Icon image size within container */
+    height: 60%;
+    object-fit: contain;
+   
+    transition: filter 0.4s ease;
+}
+
+
+
+.glass-card h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.glass-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+.glass-card .glass-button {
+    display: inline-block;
+    background: linear-gradient(to right, #02d4f9, #7c90f5); /* Gradient button */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 204, 255, 0.3);
+}
+
+.glass-card .glass-button:hover {
+    transform: translateY(-3px); /* Slight lift */
+    box-shadow: 0 8px 20px rgba(102, 204, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to right, #8A2BE2, #66CCFF); /* Reverse gradient */
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS for Animated Glass Section --- */
+@media (max-width: 991px) {
+    .animated-glass-section {
+        padding: 90px 0;
+    }
+    .animated-glass-section h2 {
+        font-size: 3em;
+    }
+    .animated-glass-section .section-description {
+        font-size: 1.1em;
+        margin-bottom: 50px;
+    }
+    .glass-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    .glass-card {
+        padding: 30px;
+    }
+    .glass-card h3 {
+        font-size: 1.6em;
+    }
+    .glass-card p {
+        font-size: 0.95em;
+    }
+    /* Reduce background animations for performance */
+    .glass-bg-blob { filter: blur(100px); opacity: 0.1; }
+    .glass-blob-1 { width: 400px; height: 400px; }
+    .glass-blob-2 { width: 500px; height: 500px; }
+    .glass-animated-texture { opacity: 0.02; background-size: 30px 30px;}
+}
+
+@media (max-width: 767px) {
+    .animated-glass-section {
+        padding: 70px 0;
+    }
+     .glass-card .card-icon img {
+        width: 120%;
+        height: 120%;
+    }
+    .animated-glass-section h2 {
+        font-size: 2.5em;
+    }
+    .animated-glass-section .section-description {
+        font-size: 1em;
+        margin-bottom: 40px;
+        padding: 0 15px; /* Add horizontal padding */
+    }
+    .glass-cards-grid {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+        max-width: 400px; /* Constrain width of stacked cards */
+    }
+    .glass-card {
+        padding: 25px;
+    }
+    .glass-card h3 {
+        font-size: 1.4em;
+    }
+    /* Further reduce background animations for very small screens */
+    .glass-bg-blob { filter: blur(70px); opacity: 0.08; }
+    .glass-blob-1 { width: 300px; height: 300px; }
+    .glass-blob-2 { width: 400px; height: 400px; }
+    .glass-animated-texture { opacity: 0.015; background-size: 25px 25px;}
+}
+
+@media (max-width: 575px) {
+    .animated-glass-section {
+        padding: 50px 0;
+    }
+    .animated-glass-section h2 {
+        font-size: 2em;
+    }
+    .animated-glass-section .section-description {
+        font-size: 0.95em;
+    }
+    .glass-card .card-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    .glass-card .card-icon img {
+        width: 70%;
+        height: 70%;
+    }
+    .glass-card h3 {
+        font-size: 1.2em;
+    }
+    .glass-card p {
+        font-size: 0.9em;
+    }
+    .glass-card .glass-button {
+        padding: 8px 20px;
+        font-size: 0.85em;
+    }
+    /* Minimal background animations for smallest screens */
+    .glass-bg-blob { filter: blur(50px); opacity: 0.05; }
+    .glass-blob-1 { width: 250px; height: 250px; }
+    .glass-blob-2 { width: 300px; height: 300px; }
+    .glass-animated-texture { opacity: 0.01; background-size: 20px 20px;}
+}
+
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #4CAF50; /* A fresh green for accents */
+    --secondary-color: #00bcd4; /* A vibrant cyan */
+    --dark-bg: #121212; /* Very dark background */
+    --card-bg: #1f1f1f; /* Slightly lighter dark for cards */
+    --text-light: #e0e0e0;
+    --text-muted: #b0b0b0;
+    --border-color: rgba(60, 60, 100, 0.5);
+    --hover-shadow-color: rgba(0, 188, 212, 0.6); /* Cyan glow */
+    --transition-speed: 0.5s;
+    --cubic-bezier-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Recommended modern font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--dark-bg); /* Ensure body matches section bg */
+    color: var(--text-light);
+}
+
+/* --- Section Layout - Fully Animated Dark Theme --- */
+.features-section {
+    padding: 100px 20px; /* More vertical padding */
+    text-align: center;
+    background-color: var(--dark-bg);
+    position: relative;
+    overflow: hidden; /* Important for containing animations */
+}
+
+/* Dynamic Background Effect (Subtle Moving Gradient) */
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 70% 30%, rgba(20,20,50,0.8) 0%, rgba(26,26,46,0.8) 50%, transparent 100%);
+    background-size: 200% 200%;
+    animation: moveBackground 20s infinite linear alternate; /* Slower, continuous move */
+    opacity: 0.6;
+    z-index: 0;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+
+.features-title {
+    font-size: 3.5em; /* Even larger, more prominent */
+    color: #65d9fc;
+    margin-bottom: 25px;
+    
+    position: relative;
+    z-index: 1;
+    animation: fadeInScale 1s ease-out forwards; /* Entry animation */
+}
+
+.features-description {
+    font-size: 1.3em;
+    color: var(--text-muted);
+    max-width: 900px;
+    margin: 0 auto 80px auto; /* More space before grid */
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 1.2s ease-out forwards; /* Entry animation */
+    animation-delay: 0.3s; /* Delay after title */
+}
+
+/* --- Grid Layout for Features --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 40px; /* Increased gap for better visual separation */
+    max-width: 1300px; /* Wider grid */
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Feature Card Styling --- */
+.feature-card {
+    background-color: var(--card-bg);
+    border-radius: 20px; /* Even more rounded */
+    padding: 40px; /* More padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Deeper shadow */
+    border: 2px solid var(--border-color); /* Thicker border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* For inner glow effect */
+
+    /* Initial state for entry animation */
+    transform: translateY(50px) scale(0.9);
+    opacity: 0;
+    animation: cardEntrance 0.8s var(--cubic-bezier-ease) forwards; /* Entry animation */
+    animation-delay: var(--delay, 0s); /* Staggered animation using custom property */
+
+    transition: transform var(--transition-speed) var(--cubic-bezier-ease),
+                opacity var(--transition-speed) var(--cubic-bezier-ease),
+                box-shadow var(--transition-speed) var(--cubic-bezier-ease),
+                background-color var(--transition-speed) var(--cubic-bezier-ease),
+                border-color var(--transition-speed) var(--cubic-bezier-ease);
+}
+
+/* Staggered animation delays for each card */
+.features-grid .feature-card:nth-child(1) { --delay: 0.6s; } /* Delay after title/description */
+.features-grid .feature-card:nth-child(2) { --delay: 0.75s; }
+.features-grid .feature-card:nth-child(3) { --delay: 0.9s; }
+.features-grid .feature-card:nth-child(4) { --delay: 1.05s; }
+/* Add more :nth-child rules if you have more cards */
+
+
+/* Inner Glow/Border Effect for Cards */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg at 50% 50%, transparent 0%, rgba(0, 188, 212, 0.1) 20%, transparent 40%, rgba(0, 188, 212, 0.1) 60%, transparent 80%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) linear;
+    animation: rotateGlow 10s linear infinite; /* Continuous subtle rotation */
+    z-index: -1;
+}
+
+.feature-card:hover::before {
+    opacity: 0.5; /* Show inner glow on hover */
+    transform: scale(1.1); /* Slightly expand glow */
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+.feature-icon img {
+    width: 100px; /* Larger icons */
+    height: 100px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0px 8px 15px rgb(227, 251, 90)); /* Cyan glow for icons */
+    transition: transform var(--transition-speed) var(--cubic-bezier-ease), filter var(--transition-speed) var(--cubic-bezier-ease);
+}
+
+.feature-card-title {
+    font-size: 1.8em; /* Bolder, more impactful */
+    color: rgb(0, 221, 255);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.feature-card-description {
+    font-size: 1.05em; /* Slightly larger for readability */
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* --- Hover Effects on Cards --- */
+.feature-card:hover {
+    transform: translateY(-15px) scale(1.03); /* Lifts higher and scales more */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 30px var(--hover-shadow-color); /* Deeper shadow + stronger cyan glow */
+    background-color: #2b2b2b; /* Slightly lighter dark on hover */
+    border-color: var(--secondary-color); /* Border highlights */
+}
+
+.feature-card:hover .feature-icon img {
+    transform: translateY(-8px) scale(1.15); /* Icon moves up and enlarges more significantly */
+    filter: drop-shadow(0px 10px 20px var(--hover-shadow-color)); /* More prominent glow on hover */
+}
+
+
+/* --- Keyframe Animations --- */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Card entry animation for grid */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .features-title {
+        font-size: 3em;
+    }
+    .features-description {
+        font-size: 1.1em;
+    }
+    .feature-card {
+        padding: 30px;
+    }
+    .feature-icon img {
+        width: 80px;
+        height: 80px;
+    }
+    .feature-card-title {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        padding: 60px 15px;
+    }
+    .features-title {
+        font-size: 2.5em;
+    }
+    .features-description {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+    .features-grid {
+        gap: 30px; /* Adjust gap for smaller screens */
+    }
+    .feature-card {
+        padding: 25px;
+        border-radius: 15px;
+    }
+    .feature-icon img {
+        width: 70px;
+        height: 70px;
+    }
+    .feature-card-title {
+        font-size: 1.4em;
+    }
+    .feature-card-description {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-section {
+        padding: 40px 10px;
+    }
+    .features-title {
+        font-size: 2em;
+    }
+    .features-description {
+        font-size: 0.9em;
+        margin-bottom: 30px;
+    }
+    .feature-card {
+        padding: 20px;
+    }
+    .feature-icon img {
+        width: 60px;
+        height: 60px;
+    }
+    .feature-card-title {
+        font-size: 1.2em;
+    }
 }
