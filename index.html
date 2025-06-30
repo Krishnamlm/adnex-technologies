@@ -601,6 +601,15 @@ body {
     transform-origin: center center; /* Ensures scale animates from center */
 }
 
+/* In your style.css file or within <style> tags in your HTML <head> */
+@keyframes rotateClockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 </style>
 </head>
@@ -638,7 +647,7 @@ body {
                         <a class="nav-link" href="#brands">WORK</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#faqs">BLOG</a> </li>
+                        <a class="nav-link" href="extra.html">INTERNSHIP</a> </li>
                          <li class="nav-item">
                         <a class="nav-link" href="#reviews">CAREER</a>
                     </li> 
@@ -662,8 +671,8 @@ body {
             <div class="col-md-6 header-img-section"  style="margin-top: 60px;">
                 <div class="hero-image-wrapper">
                     <img src="images/hero_img.png" class="img-fluid" alt="A lightbulb surrounded by design and tech icons, representing creativity and technology.">
-                    <div class="floating-icon icon-xd"><img src="images/xd.png" alt="Adobe XD"></div>
-                    <div class="floating-icon icon-ps"><img src="images/blender.png" alt="Adobe Photoshop"></div>
+                    <div class="floating-icon icon-xd"><img src="images/vs code.png" alt="Adobe XD"></div>
+                    <div class="floating-icon icon-ps"><img src="images/python.png" alt="Adobe Photoshop"></div>
                     <div class="floating-icon icon-ai"><img src="images/ai.png" alt="Adobe Illustrator"></div>
                     <div class="floating-icon icon-ae"><img src="images/ae.png" alt="Adobe After Effects"></div>
                     <div class="floating-icon icon-id"><img src="images/ps.png" alt="Adobe InDesign"></div>
@@ -958,62 +967,176 @@ body {
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo3.png" class="img-fluid"></a>
+                    <a href="#faq"><img src="images/dummy_logo3.png" class="img-fluid" ></a>
                 </div>
             </div>
             <div class="col-6 col-sm-4 col-md-3 col-lg-2">
                 <div class="client_logo_card">
                     <a href="#faq"><img src="images/dummy_logo1.png" class="img-fluid"></a>
-                </div>
+                </div >
             </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo3.png" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo2.png" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo3.png" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo1.png" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo3.png" class="img-fluid"></a>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                <div class="client_logo_card">
-                    <a href="#faq"><img src="images/dummy_logo1.png" class="img-fluid"></a>
-                </div>
-            </div>
+
             
         </div>
     </div>
 </section>
-    
-    <!-- Brands section exit --
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            // You can customize AOS settings here, e.g.:
-            // offset: 200, // offset (in px) from the original trigger point
-            // duration: 1000, // values from 0 to 3000, with step 50ms
-            // once: true // whether animation should happen only once - default is false
-        });
-    </script>
-     FAQ section -->
 
+
+  <section class="animated-glass-section" id="internship">
+    <div class="glass-bg-blob glass-blob-1"></div>
+    <div class="glass-bg-blob glass-blob-2"></div>
+    <div class="glass-animated-texture"></div>
+
+    <div class="container">
+        <h2 data-aos="fade-up">Explore Our Diverse Internship Programs!</h2>
+        <p class="section-description" data-aos="fade-up" data-aos-delay="150">Gain real-world experience, build your network, and launch your career with our impactful internships.
+
+</p>
+
+        <div class="glass-cards-grid">
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card-icon">
+                    <img src="images/front.png" alt="Creative Solutions Icon"/>
+                </div>
+                <h3>Frontend Development</h3>
+                <p>You'll build coding projects using HTML, CSS, JavaScript, and frameworks like React. Tasks include backend development, database interaction, Git for version control, debugging, and deployment for a strong portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card-icon">
+                    <img src="images/app.png" alt="Web Development Icon"/>
+                </div>
+                <h3>App Development</h3>
+                <p>You'll build mobile applications using relevant languages like Java/Swift/Kotlin or frameworks like React Native. Tasks include UI/UX design, API integration, debugging, and deployment for a strong portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card-icon">
+                    <img src="images/flutter.png" alt="Mobile App Icon"/>
+                </div>
+                <h3>Flutter Development</h3>
+                <p>You'll develop cross-platform mobile apps using Flutter and Dart. Tasks involve UI creation, state management, API integration, debugging, and deployment, building a strong project portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card-icon">
+                    <img src="images/ml.png" alt="Digital Marketing Icon"/>
+                </div>
+                <h3>Machine learning</h3>
+                <p>You'll learn to build and train models for data analysis, prediction, and pattern recognition. Tasks involve data preprocessing, algorithm selection, model evaluation, and deployment, building a strong portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card-icon">
+    <img src="images/react.png" alt="Digital Marketing Icon" style="animation: rotateClockwise 10s linear infinite;"/>
+</div>
+                <h3>ReactJS Development</h3>
+                <p>You'll master building dynamic user interfaces using ReactJS, JSX, and component-based architecture. Tasks include state management, API integration, routing, debugging, and contributing to portfolio projects.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card-icon">
+                    <img src="images/c++.png" alt="Digital Marketing Icon" style="animation: rotateClockwise 10s linear infinite;"/>
+                </div>
+                <h3>C++ Programming</h3>
+                <p>You'll master C++ fundamentals, object-oriented programming (OOP), and data structures. Tasks involve writing efficient code, debugging, algorithm implementation, and building console/system-level applications for your portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card-icon">
+                    <img src="images/java.png" alt="Creative Solutions Icon"/>
+                </div>
+                <h3>Java Programming</h3>
+                <p>You'll master Java fundamentals, object-oriented programming (OOP), and data structures. Tasks involve writing robust applications, debugging, framework (Spring/Hibernate) basics, and building enterprise-level projects for your portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="card-icon">
+                    <img src="images/javascript.png" alt="Web Development Icon"/>
+                </div>
+                <h3>JavaScript Development</h3>
+                <p>You'll master core JavaScript, DOM manipulation, and asynchronous programming. Tasks include building interactive web features, using modern frameworks (React/Vue/Angular), API integration, debugging, and contributing to portfolio projects.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="card-icon">
+                    <img src="images/python.png" alt="Mobile App Icon"style="animation: rotateClockwise 10s linear infinite;" />
+                </div>
+                <h3>Python Programming</h3>
+                <p>You'll master Python fundamentals, data structures, and object-oriented programming. Tasks involve writing efficient scripts, data analysis, automation, web development basics (Django/Flask), and building diverse projects for your portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card-icon">
+                    <img src="images/data-analytics.png" alt="Digital Marketing Icon" style="animation: rotateClockwise 10s linear infinite;"/>
+                </div>
+                <h3>Data Science</h3>
+                <p>You'll learn to analyze data, build predictive models, and extract insights. Tasks involve data cleaning, visualization, statistical analysis, machine learning, and presenting findings for impactful projects.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card-icon">
+                    <img src="images/uiux.png" alt="Digital Marketing Icon" style="animation: rotateClockwise 10s linear infinite;"/>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>You'll master user research, wireframing, prototyping, and visual design to create intuitive and engaging digital experiences. Tasks involve usability testing, feedback iteration, and building a strong design portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+
+            <div class="glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="card-icon">
+                    <img src="images/graphic.png" alt="Digital Marketing Icon"/>
+                </div>
+                <h3>Graphic Design</h3>
+                <p>You'll master design principles, software (Photoshop, Illustrator), and visual communication. Tasks involve creating logos, branding, marketing materials, and digital graphics, building a diverse portfolio.</p>
+                <a href="#" class="glass-button">Apply Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+        <h2 class="features-title"><b>Unlock Your Potential with Our Key Features</b></h2>
+        <p class="features-description">We've meticulously designed our platform with Technology & Some Extra features that empower your internship journey, connecting you with opportunities and insights every step of the way.</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="images/email-blast.png" alt="Email Notifications Icon">
+                </div>
+                <h3 class="feature-card-title">Smart Notification System</h3>
+                <p class="feature-card-description">Receive intelligent alerts for upcoming deadlines, new internship postings, and important schedule adjustments, keeping your progress on track.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="images/user.png" alt="Simple Interface Icon">
+                </div>
+                <h3 class="feature-card-title">Seamless User Journey</h3>
+                <p class="feature-card-description">A truly simple interface ensures easy navigation and clear, concise information, letting you focus on your goals without distractions.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <img src="images/deadline.png" alt="Deadline Reminders Icon">
+                </div>
+                <h3 class="feature-card-title">Timely Deadline Nudges</h3>
+<p class="feature-card-description">Receive essential reminders through email and Telegram, ensuring you effectively manage all your tasks and meet every important deadline without stress.</p>
+            </div>
+
+            </div>
+    </section>
 
  <section id="faqs" class="faq_wrapper">
 
@@ -1075,10 +1198,10 @@ body {
             <div class="footer-section footer-contact">
                 <h3>Get In Touch</h3>
                 <p class="mail">
-                    Mail us: <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJTKWVNMFvXGTxlhXDjmGstXkvKcLrJdXHvVZzKgjhXmNHSTHjpJKkmVlsBVxLnCfHSVRQB">info@adnextechnologies.in</a>
+                    Mail us: <a href="mailto:adnextechnologies@gmail.com?subject=Adnex%20User">adnextechnologies@gmail.com</a>
                 </p>
                 <p class="support">
-                    Support: <a href="mailto:krishnaphotoshop85@gmail.com">support@adnextechnologies.in</a>
+                    Support: <a href="mailto:adnextechnologies@gmail.com?subject=Adnex%20User">adnextechnologies@gmail.com</a>
                 </p>
                 <p class="Visit">
                     Visit us: Gwalior , Madhya Pradesh, India
@@ -1119,13 +1242,6 @@ body {
   </div>
 </div>
 
-<div class="whatsapp-float">
-  <a href="https://wa.link/bwfz9l" 
-     target="_blank">
-    <img src="images/whatsapp.png" alt="WhatsApp">
-    
-  </a>
-</div>
 
 
  
