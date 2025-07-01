@@ -3183,7 +3183,7 @@ body {
 }
 
 .blob-1 {
-    background: linear-gradient(135deg, #FF6B6B, #FFA500); /* Warm, energetic */
+    background: linear-gradient(135deg, #896bff, #062c95) !important; /* Warm, energetic */
     width: 600px;
     height: 600px;
     top: -100px;
@@ -3192,7 +3192,7 @@ body {
 }
 
 .blob-2 {
-    background: linear-gradient(135deg, #6BEBFF, #3366FF); /* Cool, techy */
+    background: linear-gradient(135deg, #823c02, #daa62d) !important; /* Cool, techy */
     width: 700px;
     height: 700px;
     bottom: -150px;
@@ -3364,17 +3364,20 @@ body {
     
 }
 
+
 .banner-title .title2 {
-    color: #66CCFF; /* Bright, techy blue */
+    color: #66faff !important; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
     margin-left: 0px;
 }
     .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
+    color: #66faff ; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
-    margin-left: 10px;
+    margin-left: 50px !important;
+    font-size: 74px;
+    
 }
 
 .banner-title .title22 {
@@ -3502,20 +3505,16 @@ body {
         min-height: auto; /* Allow height to adjust */
     }
     .banner-title {
-        font-size: 8em;
+        font-size: em;
     }
+
         .banner-title .title {
     color: #ffffff; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
     margin-left: 0px;
 }
-    .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
-    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
-    transition: color 0.3s ease;
-    margin-left: 10px;
-}
+
 .Hub {
     font-size: 1rem;
     font-weight: 500;
@@ -3586,7 +3585,80 @@ body {
     margin-left: 0px;
 }
     .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
+    color: #e85d06 !important; /* Bright, techy blue */
+    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
+    transition: color 0.3s ease;
+    margin-left: 10px;
+}
+.Hub {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #A0A0A0; /* Softer color for subtitle */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+    .banner-title .title22 {
+    color: #ffffff; /* Bright, techy blue */
+    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
+    transition: color 0.3s ease;
+    margin-left: 10px;
+}
+
+
+    .banner-subtitle {
+        font-size: 1em;
+    }
+    .banner-title-text {
+        font-size: 0.95em;
+    }
+    .btn-header {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+.hero-image-wrapper {
+    position: relative;
+    width: 90%;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px; /* Padding for potential inner shadow/border effects */
+    border-radius: 15px;
+
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
+    will-change: transform, box-shadow;
+}
+    .floating-icon {
+        width: 35px;
+       
+        height: 35px;
+    }
+    .floating-icon img, .floating-icon i {
+        font-size: 1.2em;
+    }
+    .banner-bg-blob {
+        filter: blur(80px); /* Even less blur */
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 480px) { /* Small devices */
+    .banner_wrapper {
+        padding: 8px 0;
+    }
+    .banner-title {
+        font-size: 2.5em;
+    }
+      .banner-title .title {
+    color: #ffffff; /* Bright, techy blue */
+    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
+    transition: color 0.3s ease;
+    margin-left: 0px;
+}
+    .banner-title .title5 {
+    color: #66faff !important; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
     margin-left: 10px;
@@ -3696,7 +3768,7 @@ body {
 }
 
 .reviews-blob-2 {
-    background: linear-gradient(135deg, #00CED1, #40E0D0); /* Dark Cyan to Turquoise */
+    background: linear-gradient(135deg, #652703, #f2aa63); /* Dark Cyan to Turquoise */
     width: 750px; /* Slightly larger */
     height: 750px;
     bottom: -120px; /* Slightly lower */
@@ -4263,12 +4335,7 @@ body {
     transition: color 0.3s ease;
     margin-left: 0px;
 }
-    .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
-    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
-    transition: color 0.3s ease;
-    margin-left: 10px;
-}
+
 
 .banner-title .title22 {
     color: #ffffff; /* Bright, techy blue */
@@ -4403,12 +4470,7 @@ body {
     transition: color 0.3s ease;
     margin-left: 0px;
 }
-    .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
-    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
-    transition: color 0.3s ease;
-    margin-left: 10px;
-}
+
 .Hub {
     font-size: 1rem;
     font-weight: 500;
@@ -5377,7 +5439,7 @@ body {
     margin-left: 0px;
 }
     .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
+    color: #66FAFF !important; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
     margin-left: 10px;
@@ -5510,18 +5572,21 @@ body {
     .banner-title {
         font-size: 8em;
     }
-        .banner-title .title {
+      .banner-title .title {
     color: #ffffff; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
-    margin-left: 0px;
+    margin-right: 140px;
+    text-align: center !important;
+    margin-left: 110px !important;
 }
-    .banner-title .title5 {
-    color: #66CCFF; /* Bright, techy blue */
-    text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
-    transition: color 0.3s ease;
-    margin-left: 10px;
+.banner-title .title2 {
+    margin-left: 0px !important;
+    margin-right: 0px;
 }
+
+ 
+ 
 .Hub {
     font-size: 1rem;
     font-weight: 500;
@@ -5589,13 +5654,20 @@ body {
     color: #ffffff; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
-    margin-left: 0px;
+    margin-right: 140px;
+    text-align: center !important;
+    margin-left: 110px !important;
+}
+.banner-title .title2 {
+    margin-left: 0px !important;
+    margin-right: 0px;
 }
     .banner-title .title5 {
     color: #66CCFF; /* Bright, techy blue */
     text-shadow: 0 0 20px rgba(102, 204, 255, 0.7); /* Stronger glow for highlight */
     transition: color 0.3s ease;
-    margin-left: 10px;
+    margin-left: 0px !important;
+    font-size: 45px;
 }
 .Hub {
     font-size: 1rem;
