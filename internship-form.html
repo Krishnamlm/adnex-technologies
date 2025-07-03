@@ -129,234 +129,204 @@ input:focus, select:focus {
 
 }
 
-        /* --- Success Section Overlay --- */
-        .success-page-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1050; /* High z-index to cover everything */
-            opacity: 0; /* Initially hidden */
-            visibility: hidden; /* Initially hidden */
-            transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
-            /* Optional: subtle background pattern for overlay */
-            background-image: radial-gradient(circle at center, rgba(0,0,0,0.1) 1px, transparent 1px);
-            background-size: 8px 8px;
-        }
+/* --- Success Section Overlay --- */
+    .success-page-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85); /* Even darker, more opaque overlay */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1050;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+        /* More pronounced background pattern for overlay */
+        background-image: radial-gradient(circle at center, rgba(255,255,255,0.05) 1px, transparent 1px);
+        background-size: 10px 10px; /* Slightly larger pattern */
+    }
 
-        .success-page-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
+    .success-page-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
-        /* --- Success Card (the message box) --- */
+    /* --- Success Card (the message box) --- */
+    .success-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(245, 245, 245, 0.1)); /* Even more transparent base */
+        border-radius: 30px; /* More rounded corners for a softer look */
+        padding: 45px 35px; /* Slightly more padding */
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6); /* Much stronger, deeper shadow */
+        text-align: center;
+        max-width: 550px; /* Wider to give more breathing room */
+        width: 90%;
+        position: relative;
+        z-index: 1;
+        backdrop-filter: blur(35px); /* Very strong glassmorphism effect */
+        -webkit-backdrop-filter: blur(35px);
+        border: 1px solid rgba(255, 255, 255, 0.8); /* More prominent, brighter border */
+        overflow: hidden; /* Crucial to contain 3D canvas and for shine effect */
+
+        /* Entry Animation (Initial State) */
+        transform: translateY(120px) scale(0.5) rotateX(30deg); /* Start further down, smaller, more tilted */
+        opacity: 0;
+        filter: blur(10px); /* Start more blurred */
+        transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1.3), /* Even bouncier entry */
+                    opacity 1s ease-out,
+                    filter 1s ease-out,
+                    box-shadow 0.6s ease-out;
+    }
+
+    .success-page-overlay.show .success-card {
+        transform: translateY(0) scale(1) rotateX(0deg); /* Final state */
+        opacity: 1;
+        filter: blur(0);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8); /* Even more intense shadow on show */
+        animation: pulseCardShadow 3s infinite alternate; /* Subtle pulsing shadow */
+    }
+
+    /* Shine Effect on Card Entry */
+    .success-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -120%; /* Start further off-screen */
+        width: 70%; /* Wider shine */
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%); /* Stronger shine */
+        transform: skewX(-30deg); /* More pronounced skew */
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0;
+    }
+
+    .success-page-overlay.show .success-card::before {
+        animation: shine 2s ease-in-out forwards; /* Longer shine animation */
+        animation-delay: 0.4s; /* Delay after card appears */
+    }
+
+    /* Exit Animation */
+    .success-page-overlay.hide-animation .success-card {
+        transform: translateY(-100px) scale(0.6) rotateX(-20deg); /* Slide up, shrink, tilt back */
+        opacity: 0;
+        filter: blur(10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Reset shadow on exit */
+        transition: transform 0.7s ease-in, opacity 0.7s ease-in, filter 0.7s ease-in, box-shadow 0.5s ease-in;
+    }
+    .success-page-overlay.hide-animation {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.7s ease-in, visibility 0.7s ease-in 0.7s; /* Delay visibility hide */
+    }
+
+
+    .success-card h2 {
+        color: #3B82F6; /* Tailwind blue-500 */
+        margin-bottom: 20px; /* Increased margin */
+        font-size: 3.2em; /* Even larger heading */
+        font-weight: 800; /* Bolder */
+        line-height: 1.1;
+        text-shadow: 0 3px 8px rgba(0,0,0,0.3); /* More prominent text shadow */
+    }
+
+    .success-card p {
+        color: #4B5563; /* Tailwind gray-600 */
+        font-size: 1.3em; /* Larger text */
+        line-height: 1.7;
+        margin-bottom: 40px; /* Increased margin */
+    }
+
+    /* --- 3D Checkmark Canvas Container --- */
+    .checkmark-3d-container {
+        width: 170px; /* Even larger container for 3D element */
+        height: 170px;
+        margin: -120px auto 30px; /* Position further above the card */
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #3B82F6 0%, #2563EB 100%); /* Blue gradient background */
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.8); /* Stronger shadow */
+        animation: checkmarkPopIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.65) forwards; /* Even bouncier pop-in */
+    }
+    .checkmark-3d-container canvas {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Inner glow/pulse for 3D checkmark container */
+    .success-page-overlay.show .checkmark-3d-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        box-shadow: 0 0 25px 10px rgba(59, 130, 246, 0.9); /* Stronger inner glow */
+        animation: pulseGlow 2.5s infinite alternate ease-in-out;
+        opacity: 0;
+        animation-delay: 1.2s; /* Start after checkmark appears */
+    }
+
+
+    @keyframes checkmarkPopIn {
+        0% { transform: scale(0); opacity: 0; }
+        70% { transform: scale(1.3); opacity: 1; } /* More overshoot */
+        100% { transform: scale(1); }
+    }
+
+    @keyframes pulseGlow {
+        0% { box-shadow: 0 0 20px 0px rgba(59, 130, 246, 0.7); opacity: 0; }
+        50% { box-shadow: 0 0 45px 20px rgba(59, 130, 246, 1); opacity: 1; }
+        100% { box-shadow: 0 0 20px 0px rgba(59, 130, 246, 0.7); opacity: 0; }
+    }
+
+    @keyframes shine {
+        0% { left: -120%; opacity: 0; }
+        20% { opacity: 1; }
+        100% { left: 100%; opacity: 0; }
+    }
+
+    @keyframes pulseCardShadow {
+        0% { box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8); }
+        50% { box-shadow: 0 35px 100px rgba(0, 0, 0, 0.9); }
+        100% { box-shadow: 0 30px 90px rgba(0, 0, 0, 0.8); }
+    }
+
+
+    /* Prevent body scrolling when overlay is active */
+    body.no-scroll {
+        overflow: hidden;
+    }
+
+    /* Button Styling (using Tailwind classes for consistency) */
+    .btn-close-custom {
+        @apply px-8 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-xl hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-75 transition-all duration-300 ease-in-out;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
         .success-card {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(245, 245, 245, 0.6)); /* More transparent for glassmorphism */
-            border-radius: 20px; /* More rounded corners */
-            padding: 40px 30px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
-            text-align: center;
-            max-width: 450px; /* Slightly wider */
-            width: 90%; /* Responsive width */
-            position: relative;
-            z-index: 1; /* Ensure card is above overlay's pattern if any */
-            backdrop-filter: blur(18px); /* Stronger glassmorphism effect */
-            -webkit-backdrop-filter: blur(18px);
-            border: 1px solid rgba(255, 255, 255, 0.6); /* More prominent border */
-
-            /* Entry Animation (Initial State) */
-            transform: translateY(80px) scale(0.7) rotateX(15deg); /* Start further down, smaller, tilted */
-            opacity: 0;
-            filter: blur(5px); /* Start blurred */
-            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.2), /* Bouncier entry */
-                        opacity 0.7s ease-out,
-                        filter 0.7s ease-out,
-                        box-shadow 0.5s ease-out; /* Add box-shadow transition */
+            padding: 35px 25px;
+            border-radius: 20px;
         }
-
-        .success-page-overlay.show .success-card {
-            transform: translateY(0) scale(1) rotateX(0deg); /* Final state: original position, full size, no tilt */
-            opacity: 1;
-            filter: blur(0); /* Clear blur */
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); /* More intense shadow on show */
-            animation: pulseCardShadow 2s infinite alternate; /* Subtle pulsing shadow */
-        }
-
-        /* Shine Effect on Card Entry */
-        .success-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -75%; /* Start off-screen to the left */
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
-            transform: skewX(-20deg);
-            pointer-events: none;
-            z-index: 2; /* Above card content */
-            opacity: 0; /* Initially hidden */
-        }
-
-        .success-page-overlay.show .success-card::before {
-            animation: shine 1.5s ease-in-out forwards; /* Shine animation on show */
-            animation-delay: 0.3s; /* Delay after card appears */
-        }
-
-        /* Exit Animation */
-        .success-page-overlay.hide-animation .success-card {
-            transform: translateY(-50px) scale(0.8) rotateX(-10deg); /* Slide up slightly, shrink, tilt back */
-            opacity: 0;
-            filter: blur(5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Reset shadow on exit */
-            transition: transform 0.5s ease-in, opacity 0.5s ease-in, filter 0.5s ease-in, box-shadow 0.3s ease-in;
-        }
-        .success-page-overlay.hide-animation {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-in, visibility 0.5s ease-in 0.5s; /* Delay visibility hide */
-        }
-
-
         .success-card h2 {
-            color: #3B82F6; /* Changed to Tailwind blue-500 */
-            margin-bottom: 15px;
-            font-size: 2.5em; /* Larger heading */
-            font-weight: 700;
-            line-height: 1.2;
+            font-size: 2.5em;
         }
-
         .success-card p {
-            color: #4B5563; /* Tailwind gray-600 */
-            font-size: 1.15em; /* Slightly larger text */
-            line-height: 1.6;
-            margin-bottom: 30px;
+            font-size: 1.1em;
         }
-
-        /* --- Checkmark Animation --- */
-        .checkmark-circle {
-            width: 100px; /* Slightly larger circle */
-            height: 100px;
-            border-radius: 50%;
-            background-color: #3B82F6; /* Changed to Tailwind blue-500 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: -80px auto 25px; /* Position above the card, adjust as needed */
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.6); /* Stronger shadow for checkmark, matching blue */
-            position: relative;
-            z-index: 1;
-            /* Animation for circle pop-in */
-            animation: checkmarkPopIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; /* Bouncy pop-in */
+        .checkmark-3d-container {
+            width: 140px;
+            height: 140px;
+            margin: -90px auto 25px;
         }
-
-        /* Inner glow/pulse for checkmark circle */
-        .success-page-overlay.show .checkmark-circle::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 50%;
-            box-shadow: 0 0 15px 5px rgba(59, 130, 246, 0.7); /* Inner glow, matching blue */
-            animation: pulseGlow 1.5s infinite alternate ease-in-out;
-            opacity: 0; /* Start hidden */
-            animation-delay: 0.8s; /* Start after checkmark appears */
-        }
-
-
-        .checkmark-stem {
-            width: 5px; /* Thicker stem */
-            height: 0;
-            background-color: #fff;
-            position: absolute;
-            border-radius: 2px;
-            transform: rotate(45deg);
-            animation: drawStem 0.4s ease-out 0.4s forwards; /* Delayed after popIn */
-        }
-
-        .checkmark-kick {
-            width: 0;
-            height: 5px; /* Thicker kick */
-            background-color: #fff;
-            position: absolute;
-            border-radius: 2px;
-            transform: rotate(-45deg);
-            animation: drawKick 0.4s ease-out 0.6s forwards; /* Delayed after stem */
-        }
-
-        @keyframes checkmarkPopIn {
-            0% { transform: scale(0); opacity: 0; }
-            70% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes drawStem {
-            to { height: 50px; } /* Longer stem */
-        }
-
-        @keyframes drawKick {
-            to { width: 35px; } /* Longer kick */
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 10px 0px rgba(59, 130, 246, 0.5); opacity: 0; } /* Matching blue */
-            50% { box-shadow: 0 0 25px 10px rgba(59, 130, 246, 0.9); opacity: 1; } /* Matching blue */
-            100% { box-shadow: 0 0 10px 0px rgba(59, 130, 246, 0.5); opacity: 0; } /* Matching blue */
-        }
-
-        @keyframes shine {
-            0% { left: -75%; opacity: 0; }
-            20% { opacity: 1; }
-            100% { left: 100%; opacity: 0; }
-        }
-
-        @keyframes pulseCardShadow {
-            0% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
-            50% { box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7); }
-            100% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
-        }
-
-
-        /* Prevent body scrolling when overlay is active */
-        body.no-scroll {
-            overflow: hidden;
-        }
-
-        /* Button Styling (using Tailwind classes for consistency) */
-        .btn-close-custom {
-            @apply px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-75 transition-all duration-300 ease-in-out;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 640px) {
-            .success-card {
-                padding: 30px 20px;
-                border-radius: 15px;
-            }
-            .success-card h2 {
-                font-size: 2em;
-            }
-            .success-card p {
-                font-size: 1em;
-            }
-            .checkmark-circle {
-                width: 70px;
-                height: 70px;
-                margin: -50px auto 20px;
-            }
-            .checkmark-stem {
-                height: 35px;
-            }
-            .checkmark-kick {
-                width: 20px;
-            }
-        }
+    }
   </style>
 
 </head>
