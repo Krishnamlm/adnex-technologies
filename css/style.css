@@ -356,6 +356,22 @@ html,body{
     .header_wrapper .navbar-brand img {
         max-width: 150px;
     }
+    .header_wrapper .navbar-collapse {
+        background: linear-gradient(135deg, rgba(11, 22, 48, 0.5), rgba(5, 11, 27, 0.95)); /* Darker background for collapsed menu */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .header_wrapper .navbar-nav .dropdown-menu {
+        margin-top: 0;
+        border-radius: 100;
+        background: linear-gradient(135deg, rgba(11, 22, 48, 0.1), rgba(5, 11, 27, 0.1)); /* Darker for dropdown */
+        border: none;
+        box-shadow: none;
+        margin-right: 8px;
+    }
     .header_wrapper .navbar-toggler .custom-toggler-icon {
         width: 30px;
         height: 30px;
