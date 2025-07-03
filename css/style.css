@@ -364,7 +364,7 @@ html,body{
         max-width: 150px;
     }
     .header_wrapper .navbar-collapse {
-        background: linear-gradient(135deg, rgba(102, 80, 1, 0.95), rgba(0, 15, 53, 0.845)); /* Darker background for collapsed menu */
+        background: linear-gradient(135deg, rgba(102, 80, 1, 0.65), rgba(0, 15, 53, 0.645)); /* Darker background for collapsed menu */
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding: 20px 0;
         backdrop-filter: blur(10px);
