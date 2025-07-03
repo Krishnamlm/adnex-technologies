@@ -364,13 +364,13 @@ html,body{
         max-width: 150px;
     }
     .header_wrapper .navbar-collapse {
-        background: linear-gradient(135deg, rgba(19, 0, 63, 0.932), rgba(0, 3, 10, 0.445)); /* Darker background for collapsed menu */
+        background: linear-gradient(135deg, rgba(19, 0, 63, 0.932), rgba(0, 3, 10, 0.845)); /* Darker background for collapsed menu */
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding: 20px 0;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     }
     .header_wrapper .navbar-nav .dropdown-menu {
         margin-top: 0;
