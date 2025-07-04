@@ -81,7 +81,13 @@
       transition: background 0.3s ease;
     }
 
-
+    @media(max-width:768px) {
+        .checkmark::before {
+      content: '✔';
+      color: white;
+      font-size: 40px;
+    }
+    }
 
   </style>
   <link rel="icon" type="image/png" href="images/favicon.png">
